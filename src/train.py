@@ -1,18 +1,16 @@
-from cv2 import threshold
-import tqdm
 import pandas as pd
 from optimizer import *
 from dataset import *
 from utils import *
 
 
-def pre_train(text: str) -> list[str]:
+def pre_train(text: str) -> tuple[list[str], list[str]]:
     corpus = list(set(text_cleaning(text).split()))
-    kbbi_map = dataset("../data/raw/kbbi.txt")
+    kbbi_map = dataset("data\\raw\\kbbi.txt")
 
     print("mencari typo suspect...")
     typo_suspect = []
-    for word in tqdm(corpus):
+    for word in corpus:
         if word not in kbbi_map:
             typo_suspect.append(word)
 
