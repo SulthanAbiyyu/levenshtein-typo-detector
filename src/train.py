@@ -18,7 +18,7 @@ def pre_train(text: str) -> tuple[list[str], list[str]]:
     search_key = word_ngram_suspect(typo_suspect)
     possible_key = tolerated_word_ngram(search_key, typo_suspect, kbbi_map)
 
-    return possible_key
+    return typo_suspect, possible_key
 
 
 def train(possible_key: list[str], typo_suspect: list[str], threshold=60) -> dict:
