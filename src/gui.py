@@ -56,4 +56,4 @@ custom_css = """
 demo = gr.Interface(fn=run, inputs="text", outputs="text", examples=["Says mau tamasya. Berkeliling keliling kots", "Ada anak bertsnya pada bapaknys"], examples_per_page=10, live=False, layout="unaligned",
                     theme="dark-peach", css=custom_css, title="LEVENSHTEIN TYPO DETECTOR", description=DESCR, article=ARTCL, thumbnail=None, allow_flagging="never")
 
-demo.launch(share=True)
+demo.launch()
