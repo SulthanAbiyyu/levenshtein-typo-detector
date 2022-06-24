@@ -1,3 +1,4 @@
+import requests
 def dataset(path: str) -> dict:
     """
     Generate dataset into dictionary, so can do random access search
@@ -13,7 +14,8 @@ def dataset(path: str) -> dict:
     """
     # TODO: Add file note found exception
     
-    kbbi = open(path, 'rb').read().lower().decode('utf-8').split("\r\n")
+    kbbi = requests.get(
+        "https://raw.githubusercontent.com/SulthanAbiyyu/levenshtein-typo-detector/master/data/raw/kbbi.txt").text.split("\n")
     kbbi_map = {
         **{word: "dummy_val" for word in kbbi},
     }

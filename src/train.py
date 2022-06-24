@@ -7,7 +7,7 @@ from utils import *
 def pre_train(text: str) -> tuple[list[str], list[str]]:
     corpus = list(set(text_cleaning(text).split()))
     kbbi_map = dataset(
-        "./data/raw/kbbi.txt")
+        "https://raw.githubusercontent.com/SulthanAbiyyu/levenshtein-typo-detector/master/data/raw/kbbi.txt")
 
     print("mencari typo suspect...")
     typo_suspect = []
