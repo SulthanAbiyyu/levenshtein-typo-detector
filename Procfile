@@ -1,1 +1,1 @@
-web: source setup.sh && python ./src/gui.py
+web: source setup.sh && python src/gui.py
